@@ -1,0 +1,38 @@
+{
+    "name": "stanby_server_resources",
+    "version": "1.0.0",
+    "private": true,
+    "scripts": {
+        "test": "NODE_ENV=testing ./node_modules/.bin/mocha --recursive",
+        "dev": "NODE_ENV=development nodemon node forever.js",
+        "production": "NODE_ENV=production nodemon node forever.js"
+    },
+    "author": "Stan",
+    "license": "MIT",
+    "dependencies": {
+        "ali-oss": "~6.1.1",
+        "co": "~4.6.0",
+        "forever-monitor": "~1.7.1",
+        "koa": "~2.5.1",
+        "koa-bodyparser": "~4.2.1",
+        "koa-formidable": "~1.1.0",
+        "koa-logger": "~3.2.0",
+        "koa-router": "~7.4.0",
+        "koa-session": "~5.8.1",
+        "koa2-cors": "~2.0.6",
+        "lodash": "~4.17.10",
+        "moment": "~2.22.2",
+        "mysql": "~2.15.0",
+        "nodemailer": "~4.6.5",
+        "nodemon": "~1.18.11",
+        "object-hash": "~1.3.0",
+        "path": "~0.12.7",
+        "sequelize": "~6.0.0",
+        "uuid": "~3.2.1"
+    },
+    "devDependencies": {
+        "eslint": "~5.16.0",
+        "mocha": "~5.2.0",
+        "should": "~13.2.1"
+    }
+}
