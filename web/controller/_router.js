@@ -32,6 +32,10 @@ const apiList = [
     ['/api/user/login',cors, POST, api.user.login],
     ['/api/user/logout', cors, POST, api.user.logout],
     ['/api/user/register', cors, POST, api.user.register],
+    ['/api/user/activate', cors, POST, api.user.activate],
+    ['/api/user/update-info', cors, POST, api.user.updateInfo],
+    ['/api/user/update-pwd', cors, POST, api.user.updatePwd],
+    ['/api/user/send-activate-mail', cors, POST, api.user.sendActivateMail],
 ];
 
 routeList.forEach(routeLink => {
