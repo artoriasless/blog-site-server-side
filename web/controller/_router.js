@@ -27,28 +27,12 @@ const routeList = [
     '/admin/edit-paper/:paperId',
 ];
 const cors = config.env === 'development';
-const apiMap = {
-    '/api/user/default': {
-        cors,
-        type: GET,
-        func: api.user.getUserDefault
-    },
-    '/api/user/login': {
-        cors,
-        type: POST,
-        func: api.user.login
-    },
-    '/api/user/logout': {
-        cors,
-        type: POST,
-        func: api.user.logout
-    },
-    '/api/user/register': {
-        cors,
-        type: POST,
-        func: api.user.register
-    }
-};
+const apiList = [
+    ['/api/user/default', cors, GET, api.user.getUserDefault],
+    ['/api/user/login',cors, POST, api.user.login],
+    ['/api/user/logout', cors, POST, api.user.logout],
+    ['/api/user/register', cors, POST, api.user.register],
+];
 
 routeList.forEach(routeLink => {
     _router.get(routeLink, async function(ctx, next) {
@@ -79,33 +63,30 @@ routeList.forEach(routeLink => {
         }
     });
 });
-
-for (let apiLink in apiMap) {
-    const apiItem = apiMap[apiLink];
-
-    if (apiItem.cors) {
-        switch(apiItem.type) {
+apiList.forEach(apiItem => {
+    if (apiItem[1]) {
+        switch(apiItem[2]) {
         case GET:
-            _router.get(apiLink, koaCors(), apiItem.func);
+            _router.get(apiItem[0], koaCors(), apiItem[3]);
             break;
         case POST:
-            _router.post(apiLink, koaCors(), apiItem.func);
+            _router.post(apiItem[0], koaCors(), apiItem[3]);
             break;
         default:
             // do nothing
         }
     } else {
-        switch(apiItem.type) {
+        switch(apiItem[2]) {
         case GET:
-            _router.get(apiLink, apiItem.func);
+            _router.get(apiItem[0], apiItem[3]);
             break;
         case POST:
-            _router.post(apiLink, apiItem.func);
+            _router.post(apiItem[0], apiItem[3]);
             break;
         default:
             // do nothing
         }
     }
-}
+});
 
 module.exports = _router;
