@@ -28,6 +28,7 @@ const routeList = [
 ];
 const cors = config.env === 'development';
 const apiList = [
+    // User
     ['/api/user/default', cors, GET, api.user.getUserDefault],
     ['/api/user/login',cors, POST, api.user.login],
     ['/api/user/logout', cors, POST, api.user.logout],
@@ -36,6 +37,9 @@ const apiList = [
     ['/api/user/update-info', cors, POST, api.user.updateInfo],
     ['/api/user/update-pwd', cors, POST, api.user.updatePwd],
     ['/api/user/send-activate-mail', cors, POST, api.user.sendActivateMail],
+
+    // Message
+    ['/api/message/page', cors, GET, api.message.page],
 ];
 
 routeList.forEach(routeLink => {
