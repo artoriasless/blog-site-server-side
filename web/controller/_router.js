@@ -12,6 +12,7 @@ const _router = new Router();
 
 const config = require('../../config');
 const api = require('./api');
+const util = require('./util');
 const ossPrefix = `${config.ossPublic.domainPrefix}/${config.ossPublic.staticFolder}`;
 const staticVersion = config.ossPublic.staticVersion;
 
@@ -28,6 +29,9 @@ const routeList = [
 ];
 const cors = config.env === 'development';
 const apiList = [
+    /* util */
+    ['/util/upload-file', cors, POST, util.uploadFile],
+
     // User
     ['/api/user/default', cors, GET, api.user.getUserDefault],
     ['/api/user/login',cors, POST, api.user.login],
