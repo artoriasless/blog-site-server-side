@@ -138,7 +138,7 @@ module.exports = {
             ctx.session.user = user;
 
             if (user.isEnabled) {
-                message = 'the account has been actived,don\'t activate repeatedly!';
+                message = 'the account has been activated, needn\'t activate anymore!';
             } else {
                 userData.id = user.id;
                 user = await userService.update(userData);
@@ -224,7 +224,6 @@ module.exports = {
         };
     },
     async sendActivateMail(ctx) {
-        //  jsonData 由后端拿前端暂存的 session
         const user = ctx.session.user;
         var success = true;
         var message = 'activate email has been sent!';

@@ -40,6 +40,7 @@ const apiList = [
     ['/api/user/activate', cors, POST, api.user.activate],
     ['/api/user/update-info', cors, POST, api.user.updateInfo],
     ['/api/user/update-pwd', cors, POST, api.user.updatePwd],
+    ['/api/user/reset-pwd', cors, POST, api.user.resetPwd],
     ['/api/user/send-activate-mail', cors, POST, api.user.sendActivateMail],
 
     // Message
