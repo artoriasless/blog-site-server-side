@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-    domain: 'http://127.0.0.1:3001',
+    domain: 'http://www.stanby.cn',
     port: 3001,
     db: {
         host: 'localhost',
