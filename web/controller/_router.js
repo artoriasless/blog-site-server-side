@@ -45,6 +45,23 @@ const apiList = [
 
     // Message
     ['/api/message/page', cors, GET, api.message.page],
+
+    // Paper
+    ['/api/paper/filter-count', cors, GET, api.paper.filterCount],
+    ['/api/paper/:paperId', cors, GET, api.paper.findOne],
+
+    // Catalogue
+    ['/api/catalogue/page', cors, GET, api.catalogue.page],
+
+    // Reply
+    ['/api/reply', cors, GET, api.reply.findMany],
+    ['/api/reply/create', cors, POST, api.reply.create],
+    ['/api/reply/:replyId/update', cors, POST, api.reply.update],
+    ['/api/reply/:replyId/delete', cors, POST, api.reply.delete],
+
+    // Admin
+    ['/api/admin/paper/add', cors, POST, api.admin.addPaper],
+    ['/api/admin/paper/:paperId/update', cors, POST, api.admin.updatePaper],
 ];
 
 routeList.forEach(routeLink => {
