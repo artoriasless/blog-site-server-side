@@ -16,7 +16,7 @@ module.exports = {
     },
     async update(data) {
         const id = data.id;
-        const paper = await Paper.findByPk(id);
+        const paper = await Paper.findById(id);
 
         if (paper) {
             const result = await paper.update(data);
@@ -26,7 +26,7 @@ module.exports = {
         return null;
     },
     async findById(id) {
-        const paper = await Paper.findByPk(id);
+        const paper = await Paper.findById(id);
 
         return (paper ? paper.toJSON() : {});
     },

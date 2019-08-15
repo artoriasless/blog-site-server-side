@@ -14,7 +14,7 @@ module.exports = {
     },
     async update(data) {
         const id = data.id;
-        const user = await User.findByPk(id);
+        const user = await User.findById(id);
 
         if (user) {
             const result = await user.update(data);
@@ -24,7 +24,7 @@ module.exports = {
         return null;
     },
     async findById(id) {
-        const user = await User.findByPk(id);
+        const user = await User.findById(id);
 
         return (user ? user.toJSON() : {});
     },

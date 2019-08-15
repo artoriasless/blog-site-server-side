@@ -113,7 +113,7 @@ module.exports = (sequelize, DataTypes) => {
                     targetKey: 'id',
                 });
                 // associate Message
-                Reply.hasOne(models.Message, {
+                Reply.hasMany(models.Message, {
                     foreignKey: 'replyId',
                     as: 'Reply',
                 });
