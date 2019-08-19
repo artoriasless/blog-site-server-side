@@ -135,11 +135,9 @@ module.exports = {
                     success = false;
                     message = 'you cannot delete other\'s comment!';
                 } else {
-                    if (originalReply.content !== jsonData.content) {
-                        originalReply.isDeleted = 1;
+                    originalReply.isDeleted = 1;
 
-                        data = await replyService.update(originalReply);
-                    }
+                    data = await replyService.update(originalReply);
                 }
             }
         }
