@@ -50,20 +50,32 @@ module.exports = {
                 success = false;
                 message = 'please activate your account first!';
             } else {
-                data = await replyService.create({
-                    userId: user.id,
-                    paperId: Number(jsonData.paperId),
-                    rootReplyId: Number(jsonData.rootReplyId),
-                    replyId: Number(jsonData.replyId),
-                    replyLevel: Number(jsonData.replyLevel),
-                    content: jsonData.content,
-                    replyDate: new Date(),
-                });
-                data = await replyService.update({
-                    id: data.id,
-                    rootReplyId: data.id,
-                    replyHistory: '[]',
-                });
+                if (jsonData.rootReplyId === undefined) {
+                    data = await replyService.create({
+                        userId: user.id,
+                        paperId: Number(jsonData.paperId),
+                        rootReplyId: 0,
+                        replyId: Number(jsonData.replyId),
+                        replyLevel: Number(jsonData.replyLevel),
+                        content: jsonData.content,
+                        replyDate: new Date(),
+                    });
+                    data = await replyService.update({
+                        id: data.id,
+                        rootReplyId: data.id,
+                        replyHistory: '[]',
+                    });
+                } else {
+                    data = await replyService.create({
+                        userId: user.id,
+                        paperId: Number(jsonData.paperId),
+                        rootReplyId: Number(jsonData.rootReplyId),
+                        replyId: Number(jsonData.replyId),
+                        replyLevel: Number(jsonData.replyLevel),
+                        content: jsonData.content,
+                        replyDate: new Date(),
+                    });
+                }
             }
         }
 
