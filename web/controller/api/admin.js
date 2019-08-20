@@ -7,7 +7,7 @@ const service = require('../../../service');
 const paperService = service.paper;
 
 module.exports = {
-    async addPaper(ctx) {
+    async createPaper(ctx) {
         const user = ctx.session.user;
         const jsonData = ctx.request.body;
         var success = true;

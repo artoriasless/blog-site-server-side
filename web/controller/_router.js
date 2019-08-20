@@ -60,7 +60,7 @@ const apiList = [
     ['/api/reply/:replyId/delete', cors, POST, api.reply.delete],
 
     // Admin
-    ['/api/admin/paper/add', cors, POST, api.admin.addPaper],
+    ['/api/admin/paper/create', cors, POST, api.admin.createPaper],
     ['/api/admin/paper/:paperId/update', cors, POST, api.admin.updatePaper],
 ];
 
