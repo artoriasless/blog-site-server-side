@@ -84,7 +84,7 @@ const genInitData = async (ctx, routeLink) => {
 };
 
 const genSeoData = (ctx, routeLink, initData) => {
-    const jsonData = ctx.request.query;
+    const params = ctx.params;
     const defaultOpts = {
         author: 'Stan',
         type: 'blog_site_version_5.0',
@@ -135,8 +135,8 @@ const genSeoData = (ctx, routeLink, initData) => {
         case '/catalogue/:filterType/:filterParam':
             if (initData.success) {
                 catalogue = _data.catalogue;
-                _opts.title = `catalogue list with filter param [${jsonData.filterParam}] under [${jsonData.filterType}] in page ${catalogue.page}`;
-                _opts.keywords = `catalogue_list,under_${jsonData.filterType},filter_by_${jsonData.filterParam},page${catalogue.page}`;
+                _opts.title = `catalogue list with filter param [${params.filterParam}] under [${params.filterType}] in page ${catalogue.page}`;
+                _opts.keywords = `catalogue_list,under_${params.filterType},filter_by_${params.filterParam},page${catalogue.page}`;
                 _opts.description = (rows => {
                     const tagList = [];
                     const subtagList = [];
