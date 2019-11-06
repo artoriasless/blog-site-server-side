@@ -1,6 +1,8 @@
 # blog-site-fontend-side
 自己搭的一个博客网站——后端部分（增加版），5.0 版本（[English](https://github.com/MonkingStand/blog-site-server-side)）
 
+> 项目更新 : 此项目已（将）更新至 **[6.0](https://github.com/MonkingStand/nextjs-blog-site/blob/master/README.zh.md)**
+
 > 踩坑记录 : **[坑~](https://github.com/MonkingStand/blog-site-server-side/blob/master/ISSUE.md)**
 
 > 线上运行版本可访问 : **[stanby.cn](http://www.stanby.cn)**
