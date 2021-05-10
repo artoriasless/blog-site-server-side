@@ -20,7 +20,7 @@
         "koa-router": "~7.4.0",
         "koa-session": "~5.8.1",
         "koa2-cors": "~2.0.6",
-        "lodash": "~4.17.10",
+        "lodash": "~4.17.21",
         "moment": "~2.22.2",
         "mysql": "~2.17.1",
         "nodemailer": "~4.6.5",
